@@ -4,7 +4,6 @@ function getDigits(puzzleInputs: any[]) {
 	let values: number[] = []
 
 	for (let i = 0; i < nonEmptyInputs.length; i++) {
-
 		const fixedValues = nonEmptyInputs[i]
 			.replaceAll('one', 'on1e')
 			.replaceAll('two', 'tw2o')
@@ -16,9 +15,9 @@ function getDigits(puzzleInputs: any[]) {
 			.replaceAll('eight', 'eig8ht')
 			.replaceAll('nine', 'ni9ne')
 
-            const firstDigit = (fixedValues.match(/\d/) ?? [])[0] ?? '0';
-            const lastDigit = (fixedValues.match(/\d(?=\D*$)/) ?? [])[0] ?? '0';
-            const connectedDigits = parseInt(firstDigit + lastDigit);
+		const firstDigit = (fixedValues.match(/\d/) ?? [])[0] ?? '0'
+		const lastDigit = (fixedValues.match(/\d(?=\D*$)/) ?? [])[0] ?? '0'
+		const connectedDigits = parseInt(firstDigit + lastDigit)
 		values.push(connectedDigits)
 	}
 
